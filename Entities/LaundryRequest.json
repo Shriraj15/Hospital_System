@@ -1,0 +1,84 @@
+{
+  "name": "LaundryRequest",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "item_type": {
+            "type": "string",
+            "enum": [
+              "bed_sheet",
+              "pillow_cover",
+              "blanket",
+              "towel",
+              "patient_gown",
+              "scrubs",
+              "curtain"
+            ]
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "condition": {
+            "type": "string",
+            "enum": [
+              "soiled",
+              "damaged",
+              "normal"
+            ]
+          }
+        }
+      }
+    },
+    "pickup_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "expected_delivery": {
+      "type": "string",
+      "format": "date"
+    },
+    "actual_delivery": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "requested",
+        "picked_up",
+        "in_progress",
+        "quality_check",
+        "delivered"
+      ],
+      "default": "requested"
+    },
+    "total_items": {
+      "type": "number"
+    },
+    "items_damaged": {
+      "type": "number",
+      "default": 0
+    },
+    "cost": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "department",
+    "items",
+    "pickup_date"
+  ]
+}
