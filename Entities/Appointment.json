@@ -1,0 +1,106 @@
+{
+  "name": "Appointment",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string"
+    },
+    "patient_name": {
+      "type": "string"
+    },
+    "patient_email": {
+      "type": "string"
+    },
+    "appointment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "appointment_time": {
+      "type": "string"
+    },
+    "arrival_time": {
+      "type": "string",
+      "description": "Actual arrival time when patient checks in"
+    },
+    "department": {
+      "type": "string",
+      "enum": [
+        "cardiology",
+        "neurology",
+        "orthopedics",
+        "pediatrics",
+        "general_medicine",
+        "dermatology",
+        "ent",
+        "ophthalmology",
+        "emergency"
+      ]
+    },
+    "doctor_name": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "booking_type": {
+      "type": "string",
+      "enum": [
+        "online",
+        "walk_in",
+        "kiosk"
+      ],
+      "default": "online",
+      "description": "How the appointment was booked"
+    },
+    "medical_urgency": {
+      "type": "string",
+      "enum": [
+        "routine",
+        "urgent",
+        "emergency",
+        "critical"
+      ],
+      "default": "routine",
+      "description": "Medical urgency level"
+    },
+    "priority_score": {
+      "type": "number",
+      "description": "Calculated priority score for queue ordering"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "scheduled",
+        "checked_in",
+        "in_consultation",
+        "completed",
+        "cancelled",
+        "no_show"
+      ],
+      "default": "scheduled"
+    },
+    "queue_number": {
+      "type": "number"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "paid",
+        "refunded"
+      ],
+      "default": "pending"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patient_name",
+    "appointment_date",
+    "department"
+  ]
+}
