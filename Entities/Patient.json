@@ -1,0 +1,58 @@
+{
+  "name": "Patient",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string",
+      "description": "Unique patient identifier"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "date_of_birth": {
+      "type": "string",
+      "format": "date"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "male",
+        "female",
+        "other"
+      ]
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "blood_group": {
+      "type": "string",
+      "enum": [
+        "A+",
+        "A-",
+        "B+",
+        "B-",
+        "AB+",
+        "AB-",
+        "O+",
+        "O-"
+      ]
+    },
+    "emergency_contact": {
+      "type": "string"
+    },
+    "medical_history": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patient_id",
+    "full_name",
+    "phone"
+  ]
+}
