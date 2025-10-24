@@ -1,0 +1,75 @@
+{
+  "name": "Complaint",
+  "type": "object",
+  "properties": {
+    "ticket_id": {
+      "type": "string"
+    },
+    "complainant_name": {
+      "type": "string"
+    },
+    "contact_info": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "medical_care",
+        "staff_behavior",
+        "facility",
+        "billing",
+        "appointment",
+        "pharmacy",
+        "other"
+      ]
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium"
+    },
+    "description": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "under_review",
+        "in_progress",
+        "resolved",
+        "closed"
+      ],
+      "default": "submitted"
+    },
+    "assigned_to": {
+      "type": "string"
+    },
+    "resolution_notes": {
+      "type": "string"
+    },
+    "resolution_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "satisfaction_rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5
+    }
+  },
+  "required": [
+    "complainant_name",
+    "contact_info",
+    "category",
+    "description"
+  ]
+}
