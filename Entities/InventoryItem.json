@@ -1,0 +1,52 @@
+{
+  "name": "InventoryItem",
+  "type": "object",
+  "properties": {
+    "medicine_name": {
+      "type": "string"
+    },
+    "generic_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "antibiotic",
+        "painkiller",
+        "vitamin",
+        "antiseptic",
+        "cardiovascular",
+        "respiratory",
+        "gastrointestinal",
+        "other"
+      ]
+    },
+    "current_stock": {
+      "type": "number"
+    },
+    "reorder_level": {
+      "type": "number"
+    },
+    "unit_price": {
+      "type": "number"
+    },
+    "expiry_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "supplier": {
+      "type": "string"
+    },
+    "batch_number": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "medicine_name",
+    "current_stock",
+    "unit_price"
+  ]
+}
