@@ -1,0 +1,68 @@
+{
+  "name": "Prescription",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string"
+    },
+    "patient_name": {
+      "type": "string"
+    },
+    "doctor_name": {
+      "type": "string"
+    },
+    "prescription_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "medicine_name": {
+            "type": "string"
+          },
+          "dosage": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price_per_unit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "dispensed",
+        "partially_dispensed"
+      ],
+      "default": "pending"
+    },
+    "total_amount": {
+      "type": "number"
+    },
+    "dispensed_by": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "patient_name",
+    "doctor_name",
+    "medications"
+  ]
+}
